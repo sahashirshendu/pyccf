@@ -1,5 +1,5 @@
 # Python CCF Code
-## Source - [PyCCF](http://ascl.net/1805.032)
+## Source - [PyCCF](https://bitbucket.org/cgrier/python_ccf_code)
 
 If you discover any bugs or failure modes in this code, please email Kate (or Mouyuan) to let her (him) know!! As per the license in the code, you are using this code at your own risk (i.e. we are not responsible for any problems/bugs, though we do our best to find and fix them).
 
