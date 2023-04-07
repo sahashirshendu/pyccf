@@ -49,12 +49,12 @@ perclim = 84.1344746
 centau = stats.scoreatpercentile(tlags_centroid, 50)
 centau_uperr = (stats.scoreatpercentile(tlags_centroid, perclim))-centau
 centau_loerr = centau-(stats.scoreatpercentile(tlags_centroid, (100.-perclim)))
-print 'Centroid, error: %10.3f  (+%10.3f -%10.3f)'%(centau, centau_loerr, centau_uperr)
+print('Centroid, error: %10.3f  (+%10.3f -%10.3f)'%(centau, centau_loerr, centau_uperr))
 
 peaktau = stats.scoreatpercentile(tlags_peak, 50)
 peaktau_uperr = (stats.scoreatpercentile(tlags_peak, perclim))-centau
 peaktau_loerr = centau-(stats.scoreatpercentile(tlags_peak, (100.-perclim)))
-print 'Peak, errors: %10.3f  (+%10.3f -%10.3f)'%(peaktau, peaktau_uperr, peaktau_loerr)
+print('Peak, errors: %10.3f  (+%10.3f -%10.3f)'%(peaktau, peaktau_uperr, peaktau_loerr))
 
 
 ##########################################
@@ -64,13 +64,13 @@ output_file_folder = './'
 centfile = open(output_file_folder+'sample_centtab_yap.dat', 'w')
 peakfile = open(output_file_folder+'sample_peaktab_yap.dat', 'w')
 ccf_file = open(output_file_folder+'sample_ccf_yap.dat', 'w')
-for m in xrange(0, np.size(tlags_centroid)):
+for m in range(0, np.size(tlags_centroid)):
     centfile.write('%5.5f    \n'%(tlags_centroid[m]))
 centfile.close()
-for m in xrange(0, np.size(tlags_peak)):
+for m in range(0, np.size(tlags_peak)):
     peakfile.write('%5.5f    \n'%(tlags_peak[m]))
 peakfile.close()
-for m in xrange(0, np.size(lag)):
+for m in range(0, np.size(lag)):
     ccf_file.write('%5.5f    %5.5f  \n'%(lag[m], r[m]))
 ccf_file.close() 
 

@@ -287,7 +287,7 @@ def peakcent(t1, y1, t2, y2, tlagmin, tlagmax, tunit, thres=0.8, siglevel=0.95, 
         peak_pvalue = 1.0 # significance level
     # ccf peaks --- excluding all with r < 0.2 instead of using p-value test. 
     if sigmode > 0:
-        #print 'Using minimum r coefficient instead of significance test.'        
+        #print('Using minimum r coefficient instead of significance test.')
         #Check and see if the max r is on the edge of the CCF. Fail it if so. 
         if max_rval >= sigmode and ccf_pack[1][max_indx] > tlagmin and ccf_pack[1][max_indx] < tlagmax: 
             tlag_peak = ccf_pack[1][max_indx]
@@ -344,7 +344,7 @@ def peakcent(t1, y1, t2, y2, tlagmin, tlagmax, tunit, thres=0.8, siglevel=0.95, 
         tlag_peak = -9999.0
         max_rval = -9999.0
         status_rval = 0 
-    #print tlag_peak, status_peak, tlag_centroid, status_centroid, max_rval, status_rval
+    #print(tlag_peak, status_peak, tlag_centroid, status_centroid, max_rval, status_rval)
     return tlag_peak, status_peak, tlag_centroid, status_centroid, ccf_pack, max_rval, status_rval, peak_pvalue
 
 
@@ -403,7 +403,7 @@ def xcor_mc(t1, y1, dy1, t2, y2, dy2, tlagmin, tlagmax, tunit, thres=0.8, siglev
     nfail_centroid = 0
     nfail_rvals = 0
     max_rvals = []
-    for i in xrange(nsim):
+    for i in range(nsim):
         if mcmode!=2:
             # RSS resample light curve 1
             mycheck = True #make sure len(t1_rss)>1
@@ -482,7 +482,7 @@ def xcor_mc(t1, y1, dy1, t2, y2, dy2, tlagmin, tlagmax, tunit, thres=0.8, siglev
     
     tlags_peak = np.asarray(tlags_peak)
     tlags_centroid = np.asarray(tlags_centroid)
-    print 'Failed centroids: ', nfail_centroid
-    print 'Failed peaks: ', nfail_peak
+    print('Failed centroids: ', nfail_centroid)
+    print('Failed peaks: ', nfail_peak)
     
     return tlags_peak, tlags_centroid, nsuccess_peak, nfail_peak, nsuccess_centroid, nfail_centroid, max_rvals, nfail_rvals, pvals

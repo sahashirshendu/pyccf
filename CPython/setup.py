@@ -7,6 +7,9 @@ ext_modules = [
               ['xcorspc.pyx'])
 ]
 
+for i in ext_modules:
+    i.cython_directives = {'language_level': "3"}
+
 setup(
   name = 'XCOR_C app',
   cmdclass = {'build_ext': build_ext},
