@@ -18,6 +18,7 @@ This version is 5~10 times faster than the PurePython version. `PYCCF.py` is the
 python setup.py build_ext --inplace
 ```
 and check if the compiling is finished without errors.
+
 2.
 ```
 python sample_runcode.py
